@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
+from Flask_PyMongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
@@ -87,8 +87,8 @@ def add_category():
     return render_template('addcategory.html')
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-    port=int(os.environ.get('PORT')),
-    debug=True) # We access the category in MongoDB, find one that matches and update.
+    app.run(host=os.environ.get('IP', "0.0.0.0"),
+    port=int(os.environ.get('PORT', "5000")),
+    debug=False) # We access the category in MongoDB, find one that matches and update.
     
 
