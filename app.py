@@ -5,8 +5,11 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'task_manager' # Creating a link to the MongoDB with Flask application
-app.config["MONGO_URI"] = 'mongodb+srv://Spagettileg:India1971pbf@myfirstcluster-52qvv.mongodb.net/task_manager?retryWrites=true&w=majority'
+# Environment variables SECRET and MONGO_URI set in Heroku dashboard in production
+
+app.secret_key = os.getenv("SECRET")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI") # Creating a link to the MongoDB with Flask application
+app.config["MONGO_DBNAME"] = "task_manager"
 
 mongo = PyMongo(app) # To create an instance of PyMongo
 
