@@ -3,11 +3,14 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+if os.path.exists("env.py"):
+    import env
+
 app = Flask(__name__)
 
 # Environment variables SECRET and MONGO_URI set in Heroku dashboard in production
 
-app.secret_key = os.getenv("SECRET")
+app.config['SECRET_KEY'] = os.getenv("SECRET")
 app.config["MONGO_URI"] = os.getenv("MONGO_URI") # Creating a link to the MongoDB with Flask application
 app.config["MONGO_DBNAME"] = "task_manager"
 
