@@ -29,7 +29,7 @@ PyYAML==5.4.1
 rsa==4.7.2
 six==1.15.0
 stevedore==3.3.0
-urllib3==1.26.3
+urllib3==1.26.4
 virtualenv==16.2.0
 virtualenv-clone==0.5.4
 virtualenvwrapper==4.8.4
