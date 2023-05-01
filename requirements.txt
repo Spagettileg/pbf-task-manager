@@ -2,7 +2,7 @@ astroid==2.3.0
 awscli==1.19.23
 dnspython==2.1.0
 docutils==0.15.2
-Flask==1.1.2
+Flask==2.3.2
 flask-pyMongo==2.3.0
 heroku==0.1.4
 ikp3db==1.4.1
